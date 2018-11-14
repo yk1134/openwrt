@@ -198,6 +198,7 @@ ifeq ($(SDK),1)
 #从而进入下语句
 %::
 	@+$(PREP_MK) $(NO_TRACE_MAKE) -r -s prereq
+#展开为  OPENWRT_BUILD= QUIET=0   mkae V=ss -r -s 
 	@./scripts/config/conf --defconfig=.config Config.in
 	@+$(ULIMIT_FIX) $(SUBMAKE) -r $@
 
