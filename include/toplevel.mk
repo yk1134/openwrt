@@ -193,7 +193,9 @@ val.%: FORCE
 WARN_PARALLEL_ERROR = $(if $(BUILD_LOG),,$(and $(filter -j,$(MAKEFLAGS)),$(findstring s,$(OPENWRT_VERBOSE))))
 
 ifeq ($(SDK),1)
-
+#这一行开始是所有make 后面跟着选项 的匹配目标 如果直接执行make 则匹配world
+# % 对所有未定义的目标进行匹配，双冒号::后无依赖规，则引用此规则，规则命令无条件执行
+#从而进入下语句
 %::
 	@+$(PREP_MK) $(NO_TRACE_MAKE) -r -s prereq
 	@./scripts/config/conf --defconfig=.config Config.in
