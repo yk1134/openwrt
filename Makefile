@@ -5,7 +5,8 @@
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
 #
-
+#这里主要需要理清openwrtmakefile的执行顺序
+#makefile最大的特点是变量的定义，即宏，展开规则。明白这点，对理解makefile有很大帮助
 TOPDIR:=${CURDIR}
 LC_ALL:=C
 LANG:=C
