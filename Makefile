@@ -7,6 +7,8 @@
 #
 #这里主要需要理清openwrtmakefile的执行顺序
 #makefile最大的特点是变量的定义，即宏，展开规则。明白这点，对理解makefile有很大帮助
+#因为执行的make 或者 make v=s又或者单包的make，在此makefile所有目标都不匹配，细心的我们可以看到include的makefile；
+#我在对这句  include $(TOPDIR)/include/toplevel.mk 展开后发现了一个通用匹配项 %::所以转到include/toplevel.mk中
 TOPDIR:=${CURDIR}
 LC_ALL:=C
 LANG:=C
